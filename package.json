@@ -1,0 +1,24 @@
+{
+  "name": "eslint-plugin-strudel",
+  "version": "1.0.0",
+  "description": "ESLint plugin for Strudel.js",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strudeljs/eslint-plugin-strudel.git"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "eslint-config"
+  ],
+  "author": "Mateusz Luczak <mateusz.luczak@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/strudeljs/eslint-plugin-strudel/issues"
+  },
+  "homepage": "https://github.com/strudeljs/eslint-plugin-strudel#readme"
+}
