@@ -1,41 +1,47 @@
+'use strict';
+
 const rule = require('../../lib/rules/redundant-init');
 const RuleTester = require('eslint').RuleTester;
 
-const parserOptions = {
-  ecmaVersion: 2015,
-  sourceType: 'module'
-};
+require('babel-eslint');
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTester({
+  parser: 'babel-eslint',
+  parserOptions: {
+    ecmaVersion: 7,
+    sourceType: 'module'
+  }
+});
+
 ruleTester.run('redundant-init', rule, {
   valid: [
     {
       filename: 'test.js',
       code: `
-        new Vue({
-          data: function () {
-            return {
-              foo: 'bar'
-            }
-          }
-        })
-      `,
-      parserOptions
+        @Component('.asdf')
+        class Test {
+           a() { }
+           b() { }
+
+           init() {
+             this.a();
+             this.b();
+           }
+        }
+      `
     }
   ],
   invalid: [
     {
       filename: 'test.js',
       code: `
-        new Vue({
-          data: function () {
-            return {
-              foo: 'bar'
-            }
+        @Component('.asdf')
+        class Test {
+          init() {
+            this.b();
           }
-        })
-      `,
-      parserOptions
+        }
+      `
     }
   ]
 });

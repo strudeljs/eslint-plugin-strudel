@@ -1,11 +1,11 @@
 {
   "name": "eslint-plugin-strudel",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "ESLint plugin for Strudel.js",
   "main": "lib/index.js",
   "scripts": {
     "start": "npm run test -- --watch",
-    "test": "mocha \"test/lib/**/*.js\" --reporter dot"
+    "test": "mocha test/lib/**/*.js"
   },
   "files": [
     "lib"
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/strudeljs/eslint-plugin-strudel#readme",
   "devDependencies": {
+    "babel-eslint": "^8.2.5",
     "eslint": "^5.1.0",
     "mocha": "^5.2.0"
   }
