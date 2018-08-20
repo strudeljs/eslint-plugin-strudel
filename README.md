@@ -13,6 +13,10 @@ $ npm install eslint-plugin-strudel -D
 
 * [strudel/redundant-init](docs/rules/redundant-init.md): enforce `OnInit` when redundant init method
 
+# Debugging
+
+[Debugging Mocha in Visual Studio Code](https://github.com/Microsoft/vscode-recipes/tree/master/debugging-mocha-tests)
+
 ## License
 
 [MIT](https://opensource.org/licenses/MIT)
