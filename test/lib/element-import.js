@@ -58,6 +58,7 @@ ruleTester.run('element-import', rule, {
       filename: 'test.js',
       code: `
         import { element as $ } from "strudel";
+        import { $ } from "strudel";
       `
     }
   ],
