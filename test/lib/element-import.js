@@ -26,8 +26,12 @@ ruleTester.run('element-import', rule, {
     {
       filename: 'test.js',
       code: `
-        import { $ } from "strudel";
-      `
+        import { element } from "strudel";
+      `,
+      errors: [{
+        message: "Element should be imported as $",
+        type: 'ImportSpecifier'
+    }]
     }
   ]
 });

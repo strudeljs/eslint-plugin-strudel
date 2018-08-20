@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "start": "npm run test -- --watch",
-    "test": "mocha test/lib/**/*.js"
+    "test": "mocha test/lib/*.js"
   },
   "files": [
     "lib"
@@ -27,7 +27,7 @@
   "homepage": "https://github.com/strudeljs/eslint-plugin-strudel#readme",
   "devDependencies": {
     "babel-eslint": "^8.2.5",
-    "eslint": "^5.1.0",
+    "eslint": "^5.3.0",
     "mocha": "^5.2.0"
   }
 }
