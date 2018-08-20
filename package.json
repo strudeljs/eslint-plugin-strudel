@@ -29,5 +29,8 @@
     "babel-eslint": "^8.2.5",
     "eslint": "^5.3.0",
     "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "chai": "^4.1.2"
   }
 }
