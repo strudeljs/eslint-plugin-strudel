@@ -11,7 +11,6 @@ $ npm install eslint-plugin-strudel -D
 
 # List of supported rules
 
-* [strudel/redundant-init](docs/rules/redundant-init.md): enforce `OnInit` when redundant init method
 * [strudel/element-import](docs/rules/element-import.md): enforce importing `element` as `$`
 
 # Debugging
