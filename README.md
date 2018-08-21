@@ -13,6 +13,7 @@ $ npm install eslint-plugin-strudel -D
 
 * [strudel/element-import](docs/rules/element-import.md): enforce importing `element` as `$`
 * [strudel/single-line-el](docs/rules/single-line-el.md): enforce using @El with it's property in one line
+* [strudel/no-useless-init](docs/rules/no-useless-init.md): prevent useless init method, use @OnInit decorator instead
 
 # Debugging
 
