@@ -12,6 +12,7 @@ $ npm install eslint-plugin-strudel -D
 # List of supported rules
 
 * [strudel/element-import](docs/rules/element-import.md): enforce importing `element` as `$`
+* [strudel/element-import](docs/rules/single-line-el.md): enforce using @El with it's property in one line
 
 # Debugging
 
