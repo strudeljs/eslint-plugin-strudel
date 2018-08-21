@@ -1,8 +1,7 @@
 # Element import
 
 ## Descritpion
-Enforces not using element export directly. 
-Suggested approach is to import $ from Strudel or reassign your import to $.
+Enforces using @El decorator in single line with decorated property for best readability.
 
 This rule supports eslint --fix. 
 
@@ -11,14 +10,18 @@ This rule supports eslint --fix.
 Example of incorrect code for this rule
 
 ```
-import { element } from "strudel";
+class TestClass {
+    @El('selector') 
+    property
+}
 ```
 
 Example of correct code for this rule:
 
 ```
-import { element as $ } from "strudel";
-import { $ } from "strudel";
+class TestClass {
+    @El('selector') property
+}
 ```
 
 ## Options
