@@ -67,11 +67,11 @@ ruleTester.run('single-line-el', rule, {
       code: `
         class TestClass {
             @El('selector') 
-            property
+            decoratedProperty
         }
       `,
       errors: [{
-        message: "Property should be in same line as El decorator",
+        message: "decoratedProperty should be in same line as El decorator",
         type: 'ClassProperty'
     }]
     }
