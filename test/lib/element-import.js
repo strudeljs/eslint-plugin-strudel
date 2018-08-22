@@ -2,8 +2,6 @@
 
 const { expect } = require('chai');
 const RuleTester = require('eslint').RuleTester;
-const LinterConstructor = require('eslint').Linter;
-const Linter = new LinterConstructor();
 
 const commonParserConfig = require('../utils/common').commonParserConfig;
 const defaultRuleFixer = require('../utils/common').defaultRuleFixer;
@@ -12,10 +10,6 @@ const rule = require('../../lib/rules/element-import');
 require('babel-eslint');
 
 describe('Element import', () => {
-  before(() => {
-    Linter.defineRule('element-import', rule);
-  })
-
   it('Correctly add import alias', () => {
     const sourceCode = "import { element } from 'strudel';";
     const expectedOutput = "import { element as $ } from 'strudel';";

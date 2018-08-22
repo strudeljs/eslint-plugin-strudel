@@ -2,8 +2,6 @@
 
 const { expect } = require('chai');
 const RuleTester = require('eslint').RuleTester;
-const LinterConstructor = require('eslint').Linter;
-const Linter = new LinterConstructor();
 
 const commonParserConfig = require('../utils/common').commonParserConfig;
 const defaultRuleFixer = require('../utils/common').defaultRuleFixer;
@@ -28,7 +26,6 @@ describe('Single line el', () => {
     `;
 
     const fixer = defaultRuleFixer(sourceCode, rule, { 'single-line-el': "error" })
-    debugger;
 
     expect(fixer.output).to.equal(expectedOutput);
     expect(fixer.fixed).to.be.true;
