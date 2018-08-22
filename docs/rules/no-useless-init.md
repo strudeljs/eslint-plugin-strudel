@@ -2,10 +2,8 @@
 
 ## Descritpion
 
-Enforces not using element export directly.
-Suggested approach is to import $ from Strudel or reassign your import to $.
-
-This rule supports eslint --fix.
+Enforces not using useless init method that can be replaced by using @OnInit decorator on appropriate method calls.
+It also prevents from leaving empty init method in class body.
 
 ## Rule details
 
