@@ -15,7 +15,7 @@ $ npm install eslint-plugin-strudel -D
 * [strudel/single-line-el](docs/rules/single-line-el.md): enforce using @El with it's property in one line
 * [strudel/no-useless-init](docs/rules/no-useless-init.md): prevent useless init method
 * [strudel/first-method-init](docs/rules/first-method-init.md): enforce init being first method if used
-* [strudel/oninit-on-top](docs/rules/oninit-on-top.md): enforce usage of OnInit decorator on top of class
+* [strudel/oninit-on-top](docs/rules/oninit-on-top.md): enforces methods decorated with @OnInit to be first methods of class
 
 # Debugging
 

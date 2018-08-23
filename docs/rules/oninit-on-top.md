@@ -2,7 +2,7 @@
 
 ## Descritpion
 
-Enforces usage of methods decorated with @OnInit on top of the class.
+Enforces methods decorated with @OnInit to be first methods of class.
 Exception to this rule is init() method that if present should be always first method.
 
 ## Rule details
