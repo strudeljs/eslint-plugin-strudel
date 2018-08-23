@@ -4,32 +4,23 @@ const { expect } = require('chai');
 const RuleTester = require('eslint').RuleTester;
 
 const commonParserConfig = require('../utils/common').commonParserConfig;
-const rule = require('../../lib/rules/first-method-init');
+const rule = require('../../lib/rules/oninit-on-top');
 
 require('babel-eslint');
 
 const ruleTester = new RuleTester(commonParserConfig);
 
-ruleTester.run('first-method-init', rule, {
+ruleTester.run('oninit-on-top', rule, {
   valid: [
     {
       filename: 'test.js',
       code: `
         @Component('test')
         class Test {
-          @El('.selector') $property
-          init() { }
-        }
-      `
-    },
-    {
-      filename: 'test.js',
-      code: `
-        @Component('test')
-        class Test {
-          property = 10
-        
-          init() { }
+          @OnInit
+          render() {}
+
+          method() {}
         }
       `
     },
@@ -39,9 +30,12 @@ ruleTester.run('first-method-init', rule, {
         @Component('test')
         class Test {
           init() {}
+
+          @OnInit
+          render() {}
         }
       `
-    },
+    }
   ],
   invalid: [
     {
@@ -49,15 +43,16 @@ ruleTester.run('first-method-init', rule, {
       code: `
         @Component('asdf')
         class Test {
-          render() {}
+          method() {}
         
-          init() {}
+          @OnInit
+          render() {}
         }
       `,
       errors: [{
-        message: "Init is not first method of class",
+        message: "@OnInit must be on top of the class methods",
         type: 'ClassDeclaration'
-      }]
+    }]
     },
   ]
 });
