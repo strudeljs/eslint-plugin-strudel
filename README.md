@@ -51,7 +51,9 @@ This plugin provides two predefined configs:
 
 ## Contribution
 Before you start writing new rule, please read the official [ESLint guide](https://eslint.org/docs/developer-guide/working-with-rules).
+
 Next you need to get an idea how the AST looks like - use [astexplorer.net](http://astexplorer.net/) to inspect ASTs.
+
 When writing tests for rules [Debugging Mocha guide for Visual Studio Code](https://github.com/Microsoft/vscode-recipes/tree/master/debugging-mocha-tests) may become helpful.
 
 ## License
