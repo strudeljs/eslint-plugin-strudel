@@ -22,7 +22,7 @@ $ npm i eslint eslint-plugin-strudel -D
 
 ## Usage
 
-Create `.eslintrc` file to configure rules. See: [http://eslint.org/docs/user-guide/configuring](ttp://eslint.org/docs/user-guide/configuring)
+Create `.eslintrc.*` file to configure rules. See: [http://eslint.org/docs/user-guide/configuring](http://eslint.org/docs/user-guide/configuring)
 
 Example `.eslintrc.js`:
 ```
