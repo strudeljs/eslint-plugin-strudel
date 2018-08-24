@@ -10,11 +10,13 @@ $ npm install eslint-plugin-strudel -D
 ```
 
 # Usage
+```
 {
   "extends": [
     "plugin:strudel/recommended"
   ]
 }
+```
 
 # List of supported rules
 
