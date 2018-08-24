@@ -9,6 +9,13 @@ $ npm i eslint -D
 $ npm install eslint-plugin-strudel -D
 ```
 
+# Usage
+{
+  "extends": [
+    "plugin:strudel/recommended"
+  ]
+}
+
 # List of supported rules
 
 * [strudel/element-import](docs/rules/element-import.md): enforce importing `element` as `$`
