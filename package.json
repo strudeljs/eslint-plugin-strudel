@@ -29,8 +29,7 @@
   },
   "homepage": "https://github.com/strudeljs/eslint-plugin-strudel#readme",
   "dependencies": {
-    "babel-eslint": "^8.2.5",
-    "strudel-jest": "../strudel-jest"
+    "babel-eslint": "^8.2.5"
   },
   "engines": {
     "node": ">=6.5"
