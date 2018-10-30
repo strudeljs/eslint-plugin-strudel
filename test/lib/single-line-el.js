@@ -10,11 +10,10 @@ const rule = require('../../lib/rules/single-line-el');
 require('babel-eslint');
 
 describe('Single line el', () => {
-
   it('Correctly change decorated property place', () => {
     const sourceCode = `
         class TestClass {
-            @El('selector') 
+            @El('selector')
             property
         }
     `;
@@ -25,12 +24,12 @@ describe('Single line el', () => {
         }
     `;
 
-    const fixer = defaultRuleFixer(sourceCode, rule, { 'single-line-el': "error" })
+    const fixer = defaultRuleFixer(sourceCode, rule, { 'single-line-el': 'error' })
 
     expect(fixer.output).to.equal(expectedOutput);
     expect(fixer.fixed).to.be.true;
   })
-  
+
   it('Does not change correct code', () => {
     const sourceCode = `
         class TestClass {
@@ -38,7 +37,7 @@ describe('Single line el', () => {
         }
     `;
 
-    const fixer = defaultRuleFixer(sourceCode, rule, { 'single-line-el': "error" })
+    const fixer = defaultRuleFixer(sourceCode, rule, { 'single-line-el': 'error' })
 
     expect(fixer.output).to.equal(sourceCode);
     expect(fixer.fixed).to.be.false;
@@ -63,12 +62,12 @@ ruleTester.run('single-line-el', rule, {
       filename: 'test.js',
       code: `
         class TestClass {
-            @El('selector') 
+            @El('selector')
             decoratedProperty
         }
       `,
       errors: [{
-        message: "decoratedProperty should be in same line as El decorator",
+        message: 'decoratedProperty should be in same line as El decorator',
         type: 'ClassProperty'
     }]
     }

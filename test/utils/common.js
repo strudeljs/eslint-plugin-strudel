@@ -1,10 +1,10 @@
-const LinterConstructor = require("eslint").Linter;
+const LinterConstructor = require('eslint').Linter;
 
 const commonParserConfig = {
-  parser: "babel-eslint",
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 7,
-    sourceType: "module"
+    sourceType: 'module'
   }
 };
 

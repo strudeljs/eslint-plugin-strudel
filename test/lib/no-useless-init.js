@@ -1,6 +1,5 @@
 'use strict';
 
-const { expect } = require('chai');
 const RuleTester = require('eslint').RuleTester;
 
 const commonParserConfig = require('../utils/common').commonParserConfig;
@@ -31,13 +30,13 @@ ruleTester.run('no-useless-init', rule, {
       code: `
         @Component('test-component')
         class Test {
-            init() { 
+            init() {
                 this.render();
             }
         }
       `,
       errors: [{
-        message: "No useless init function. Use @OnInit decorator instead",
+        message: 'No useless init function. Use @OnInit decorator instead',
         type: 'ClassDeclaration'
     }]
     },
@@ -50,7 +49,7 @@ ruleTester.run('no-useless-init', rule, {
         }
       `,
       errors: [{
-        message: "No useless init function. Use @OnInit decorator instead",
+        message: 'No useless init function. Use @OnInit decorator instead',
         type: 'ClassDeclaration'
     }]
     }

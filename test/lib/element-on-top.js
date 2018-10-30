@@ -1,6 +1,5 @@
 'use strict';
 
-const { expect } = require('chai');
 const RuleTester = require('eslint').RuleTester;
 
 const commonParserConfig = require('../utils/common').commonParserConfig;
@@ -18,8 +17,8 @@ ruleTester.run('el-on-top', rule, {
         @Component('test')
         class Test {
           @El('.selector') property
-          @El('.selector2') property2 
-        
+          @El('.selector2') property2
+
           init() {}
         }
       `
@@ -32,12 +31,12 @@ ruleTester.run('el-on-top', rule, {
         @Component('asdf')
         class Test {
           init() {}
-        
+
           @El('selector') property
         }
       `,
       errors: [{
-        message: "Element decorator not on top of class",
+        message: `'El' decorator not on top of class.`,
         type: 'ClassDeclaration'
     }]
     }
