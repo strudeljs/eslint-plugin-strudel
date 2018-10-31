@@ -67,7 +67,7 @@ ruleTester.run('single-line-el', rule, {
         }
       `,
       errors: [{
-        message: 'decoratedProperty should be in same line as El decorator',
+        message: '"decoratedProperty" should be in same line as "El" decorator',
         type: 'ClassProperty'
     }]
     }
