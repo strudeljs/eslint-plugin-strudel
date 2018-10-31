@@ -56,6 +56,14 @@ ruleTester.run('single-line-el', rule, {
             @El('selector') property
         }
       `
+    },
+    {
+      filename: 'test.js',
+      code: `
+        class TestClass {
+            @El('this_is_super_long_selector_that_will_exceed_line') and_this_is_super_long_property_property
+        }
+      `
     }
   ],
   invalid: [
