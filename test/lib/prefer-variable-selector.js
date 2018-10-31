@@ -11,8 +11,6 @@ require('babel-eslint');
 
 const ruleTester = new RuleTester(commonParserConfig);
 
-debugger;
-
 ruleTester.run('single-line-el', rule, {
   valid: [
     {
