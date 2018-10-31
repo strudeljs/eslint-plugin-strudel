@@ -1,13 +1,13 @@
 'use strict';
 
 const RuleTester = require('eslint').RuleTester;
-
-const commonParserConfig = require('../utils/common').commonParserConfig;
 const rule = require('../../lib/rules/first-method-init');
 
-require('babel-eslint');
+// ------------------------------------------------
+// Tests
+// ------------------------------------------------
 
-const ruleTester = new RuleTester(commonParserConfig);
+const ruleTester = new RuleTester(require('../utils/common').commonParserConfig);
 
 ruleTester.run('first-method-init', rule, {
   valid: [

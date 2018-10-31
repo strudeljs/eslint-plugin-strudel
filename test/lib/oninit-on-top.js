@@ -1,13 +1,13 @@
 'use strict';
 
 const RuleTester = require('eslint').RuleTester;
-
-const commonParserConfig = require('../utils/common').commonParserConfig;
 const rule = require('../../lib/rules/oninit-on-top');
 
-require('babel-eslint');
+// ------------------------------------------------
+// Tests
+// ------------------------------------------------
 
-const ruleTester = new RuleTester(commonParserConfig);
+const ruleTester = new RuleTester(require('../utils/common').commonParserConfig);
 
 ruleTester.run('oninit-on-top', rule, {
   valid: [
@@ -51,7 +51,7 @@ ruleTester.run('oninit-on-top', rule, {
       errors: [{
         message: `'@OnInit' must be on top of the class methods.`,
         type: 'ClassDeclaration'
-    }]
+      }]
     },
   ]
 });

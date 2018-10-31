@@ -135,6 +135,6 @@ module.exports = {
     'array-bracket-spacing': [2, 'never'],
     'eslint-plugin/report-message-format': ['error', '^[A-Z`\'].*\\.$'],
     'eslint-plugin/prefer-placeholders': 'error',
-    'eslint-plugin/consistent-output': 'error',
+    'eslint-plugin/consistent-output': 'error'
   }
 }

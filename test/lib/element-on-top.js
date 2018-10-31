@@ -1,13 +1,13 @@
 'use strict';
 
 const RuleTester = require('eslint').RuleTester;
-
-const commonParserConfig = require('../utils/common').commonParserConfig;
 const rule = require('../../lib/rules/element-on-top');
 
-require('babel-eslint');
+// ------------------------------------------------
+// Tests
+// ------------------------------------------------
 
-const ruleTester = new RuleTester(commonParserConfig);
+const ruleTester = new RuleTester(require('../utils/common').commonParserConfig);
 
 ruleTester.run('el-on-top', rule, {
   valid: [
@@ -38,7 +38,7 @@ ruleTester.run('el-on-top', rule, {
       errors: [{
         message: `'El' decorator not on top of class.`,
         type: 'ClassDeclaration'
-    }]
+      }]
     }
   ]
 });
