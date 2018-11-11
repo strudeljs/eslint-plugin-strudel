@@ -1,14 +1,13 @@
 'use strict';
 
-const { expect } = require('chai');
 const RuleTester = require('eslint').RuleTester;
-
-const commonParserConfig = require('../utils/common').commonParserConfig;
 const rule = require('../../lib/rules/first-method-init');
 
-require('babel-eslint');
+// ------------------------------------------------
+// Tests
+// ------------------------------------------------
 
-const ruleTester = new RuleTester(commonParserConfig);
+const ruleTester = new RuleTester(require('../utils/common').commonParserConfig);
 
 ruleTester.run('first-method-init', rule, {
   valid: [
@@ -28,7 +27,7 @@ ruleTester.run('first-method-init', rule, {
         @Component('test')
         class Test {
           property = 10
-        
+
           init() { }
         }
       `
@@ -50,12 +49,12 @@ ruleTester.run('first-method-init', rule, {
         @Component('asdf')
         class Test {
           render() {}
-        
+
           init() {}
         }
       `,
       errors: [{
-        message: "Init is not first method of class",
+        message: `'init' is not first method of class.`,
         type: 'ClassDeclaration'
       }]
     },

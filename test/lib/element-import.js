@@ -1,36 +1,13 @@
 'use strict';
 
-const { expect } = require('chai');
 const RuleTester = require('eslint').RuleTester;
-
-const commonParserConfig = require('../utils/common').commonParserConfig;
-const defaultRuleFixer = require('../utils/common').defaultRuleFixer;
 const rule = require('../../lib/rules/element-import');
 
-require('babel-eslint');
+// ------------------------------------------------
+// Tests
+// ------------------------------------------------
 
-describe('Element import', () => {
-  it('Correctly add import alias', () => {
-    const sourceCode = "import { element } from 'strudel';";
-    const expectedOutput = "import { element as $ } from 'strudel';";
-
-    const fixer = defaultRuleFixer(sourceCode, rule, { 'element-import': "error" });
-
-    expect(fixer.output).to.equal(expectedOutput);
-    expect(fixer.fixed).to.be.true;
-  })
-  
-  it('Does not change correct code', () => {
-    const sourceCode = "import { element as $ } from 'strudel';";
-
-    const fixer = defaultRuleFixer(sourceCode, rule, { 'element-import': "error" });
-
-    expect(fixer.output).to.equal(sourceCode);
-    expect(fixer.fixed).to.be.false;
-  })
-})
-
-const ruleTester = new RuleTester(commonParserConfig);
+const ruleTester = new RuleTester(require('../utils/common').commonParserConfig);
 
 ruleTester.run('element-import', rule, {
   valid: [
@@ -48,10 +25,13 @@ ruleTester.run('element-import', rule, {
       code: `
         import { element } from "strudel";
       `,
+      output: `
+        import { element as $ } from "strudel";
+      `,
       errors: [{
-        message: "Element should be imported as $",
+        message: `'El' should be imported as '$'.`,
         type: 'ImportSpecifier'
-    }]
+      }]
     }
   ]
 });
