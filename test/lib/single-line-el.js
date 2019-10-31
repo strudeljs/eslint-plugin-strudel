@@ -25,7 +25,7 @@ describe('Single line el', () => {
         }
     `;
 
-    const fixer = defaultRuleFixer(sourceCode, rule, { 'single-line-el': "error" })
+    const fixer = defaultRuleFixer(sourceCode, rule, { 'single-line-el': ["error", 100] })
 
     expect(fixer.output).to.equal(expectedOutput);
     expect(fixer.fixed).to.be.true;
@@ -38,7 +38,7 @@ describe('Single line el', () => {
         }
     `;
 
-    const fixer = defaultRuleFixer(sourceCode, rule, { 'single-line-el': "error" })
+    const fixer = defaultRuleFixer(sourceCode, rule, { 'single-line-el': ["error", 100] })
 
     expect(fixer.output).to.equal(sourceCode);
     expect(fixer.fixed).to.be.false;
