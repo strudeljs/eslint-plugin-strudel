@@ -25,7 +25,7 @@ describe('Single line el', () => {
         }
     `;
 
-    const fixer = defaultRuleFixer(sourceCode, rule, { 'single-line-el': "error" })
+    const fixer = defaultRuleFixer(sourceCode, rule, { 'single-line-el': ["error", 100] })
 
     expect(fixer.output).to.equal(expectedOutput);
     expect(fixer.fixed).to.be.true;
@@ -38,7 +38,7 @@ describe('Single line el', () => {
         }
     `;
 
-    const fixer = defaultRuleFixer(sourceCode, rule, { 'single-line-el': "error" })
+    const fixer = defaultRuleFixer(sourceCode, rule, { 'single-line-el': ["error", 100] })
 
     expect(fixer.output).to.equal(sourceCode);
     expect(fixer.fixed).to.be.false;
@@ -54,6 +54,14 @@ ruleTester.run('single-line-el', rule, {
       code: `
         class TestClass {
             @El('selector') property
+        }
+      `
+    },
+    {
+      filename: 'test.js',
+      code: `
+        class TestClass {
+            @El('this_is_super_long_selector_that_will_exceed_line') and_this_is_super_long_property_property
         }
       `
     }
